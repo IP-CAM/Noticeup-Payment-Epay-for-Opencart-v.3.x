@@ -16,6 +16,7 @@ $_['entry_total']        = 'Нижняя граница';
 $_['entry_order_status'] = 'Статус заказа';
 $_['entry_post_order_status'] = 'Статус заказа после успешной оплаты';
 $_['entry_geo_zone']     = 'Географическая зона';
+$_['entry_mode']         = 'Тестовый режим';
 $_['entry_status']       = 'Статус';
 $_['entry_sort_order']   = 'Порядок сортировки';
 

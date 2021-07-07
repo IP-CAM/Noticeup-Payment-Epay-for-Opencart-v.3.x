@@ -34,9 +34,16 @@ class ControllerExtensionPaymentEpay extends Controller
                 'failurePostLink' => $data['failureBackLink'],
             );
 
+            // Тестовый режим
+            if ($this->config->get('payment_epay_terminal')) {
+                $mode = "https://testoauth.homebank.kz/epay2/oauth2/token";
+            } else {
+                $mode = "https://epay-oauth.homebank.kz/oauth2/token";
+            }
+
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_URL, "https://testoauth.homebank.kz/epay2/oauth2/token");
+            curl_setopt($ch, CURLOPT_URL, $mode);
             curl_setopt($ch, CURLOPT_POST, 1);
 
 
@@ -60,7 +67,6 @@ class ControllerExtensionPaymentEpay extends Controller
             $this->load->model('checkout/order');
 
             $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('payment_epay_order_status_id'));
-//			$json['redirect'] = $this->url->link('checkout/success');
             $json['success'] = true;
         }
 

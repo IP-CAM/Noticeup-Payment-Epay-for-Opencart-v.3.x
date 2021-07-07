@@ -94,6 +94,12 @@ class ControllerExtensionPaymentEpay extends Controller {
 
 		$data['geo_zones'] = $this->model_localisation_geo_zone->getGeoZones();
 
+        if (isset($this->request->post['payment_epay_mode'])) {
+            $data['payment_epay_mode'] = $this->request->post['payment_epay_mode'];
+        } else {
+            $data['payment_epay_mode'] = $this->config->get('payment_epay_mode');
+        }
+
 		if (isset($this->request->post['payment_epay_status'])) {
 			$data['payment_epay_status'] = $this->request->post['payment_epay_status'];
 		} else {
