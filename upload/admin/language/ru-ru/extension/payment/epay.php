@@ -15,6 +15,7 @@ $_['entry_terminal']     = 'Идентификатор магазина';
 $_['entry_total']        = 'Нижняя граница';
 $_['entry_order_status'] = 'Статус заказа';
 $_['entry_post_order_status'] = 'Статус заказа после успешной оплаты';
+$_['entry_transaction_order_status'] = 'Статус заказа после списание';
 $_['entry_geo_zone']     = 'Географическая зона';
 $_['entry_mode']         = 'Тестовый режим';
 $_['entry_status']       = 'Статус';
