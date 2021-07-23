@@ -4,7 +4,13 @@
     <input type="button" value="{{ button_confirm }}" id="button-confirm" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
   </div>
 </div>
-<script src="https://test-epay.homebank.kz/payform/payment-api.js" type="text/javascript"></script>
+
+{% if testMode %}
+  <script src="https://test-epay.homebank.kz/payform/payment-api.js" type="text/javascript"></script>
+{% else %}
+  <script src="https://epay.homebank.kz/payform/payment-api.js" type="text/javascript"></script>
+{% endif %}
+
 <script type="text/javascript"><!--
 $('#button-confirm').on('click', function() {
 	$.ajax({

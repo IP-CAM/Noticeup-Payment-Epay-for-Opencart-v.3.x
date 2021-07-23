@@ -35,9 +35,11 @@ class ControllerExtensionPaymentEpay extends Controller
             );
 
             // Тестовый режим
-            if ($this->config->get('payment_epay_terminal')) {
+            if ($this->config->get('payment_epay_mode')) {
+                $data['testMode'] = true;
                 $mode = "https://testoauth.homebank.kz/epay2/oauth2/token";
             } else {
+                $data['testMode'] = false;
                 $mode = "https://epay-oauth.homebank.kz/oauth2/token";
             }
 
